@@ -1,0 +1,25 @@
+#run on .gitea / workflows / demo.yaml
+name: Gitea Actions Demo
+run-name: ${{ gitea.actor }} is testing out Gitea Actions 🚀
+on: [push]
+
+defaults:
+  run:
+    shell: powershell
+
+jobs:
+  Explore-Gitea-Actions:
+    runs-on: windows-office
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ gitea.event_name }} event123."
+      #- run: git clone https://git.office.yimeng.ch/yimeng/runner-test.git
+      - run: pwd
+      - run: dir
+      - run: "d:"
+      - run: pwd
+      - run: "cd alpine"
+      - run: git clone https://git.office.yimeng.ch/yimeng/runner-test.git
+      - run: cd runner-test/vagrant/alpine
+      - run: pwd
+      - run: dir
+      - run: vagrant up
